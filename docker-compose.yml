@@ -108,6 +108,7 @@ services:
   filebeat:
     image: "docker.elastic.co/beats/filebeat:8.15.3"
     user: root
+    command: ["-e", "--strict.perms=false"]
     environment:
       FILEBEAT_INTERNAL_PASSWORD: ${FILEBEAT_INTERNAL_PASSWORD:-}
     volumes:
